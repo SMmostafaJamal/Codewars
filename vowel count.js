@@ -3,7 +3,15 @@
 //We will consider a, e, i, o, u as vowels for this Kata (but not y).
 
 //The input string will only consist of lower case letters and/or spaces.
+function getCount(str) {
+  
+  // enter your majic here
+  return [...str].filter(el =>['a','e','i','o','u'].includes(el) ).length
 
+  //   return vowelsCount;
+}
+getCount("abracadabra")
+/*
 function getCount(str) {
   var vowelsCount = 0;
   // enter your majic here
@@ -23,3 +31,4 @@ function getCount(str) {
   return vowelsCount;
 }
 getCount("pear tree")
+*/
