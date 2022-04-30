@@ -1,0 +1,7 @@
+/*
+
+squareDigits = num => {
+  return Number(String(num).split('').map(el=> Number(el)**2).join(''))
+  
+  }
+squareDigits(2112)
