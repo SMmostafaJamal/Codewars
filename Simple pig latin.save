@@ -1,0 +1,20 @@
+/*
+
+
+function pigIt(str){
+  //Code here
+    let newSen = []
+    str.split(' ').map(el=>{
+    let word = [...el]
+    if(!(word[0] === '!' || word[0] === '?')){
+      let firstLetter = word.shift()
+      word = `${word}${firstLetter}ay`
+      word=Array.from(word.split(',')).join('')
+      newSen.push(word)
+    }else{
+      newSen.push(word)
+    }
+  })
+  return newSen.join(' ')
+}
+pigIt('O emporatay o oresmay !')
