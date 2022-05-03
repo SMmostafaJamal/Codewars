@@ -12,21 +12,24 @@ function validParentheses(parens) {
   let left = []
   let right = []
   
-  .map(el => {
-
-    if(el === '('){
-      left.push(el)
-    }else if(el === ')'){
-      right.push(el)
-    }
-    
-  })
+  if( parens[0] === ')' || parens[parens.length-1]==='(' 
+    || (parens[0] === '(' && parens[1] === ')' && parens[2] === ')')){
+    return false
+  }else {
+    parens.map(el => {
+      if(el === '('){
+        left.push(el)
+      }else if(el === ')'){
+        right.push(el)
+      }
+    })
+  }
 
   if(left.length === right.length){
     return true
   }else{
-    return false
+    return false    
   }
 
 }
-validParentheses( "())" )
+validParentheses( ")" )
