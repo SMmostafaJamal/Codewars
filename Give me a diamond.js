@@ -33,20 +33,14 @@ function diamond(n){
   let diam = ''
   let midPoint = Math.ceil(n/2) 
   let count = 1
-  if(!(n % 2 === 0 || n <= 0)){
+  
+  if(n % 2 === 0 || n <= 0) return null
   for(let i = 1; i <= n; i++){
-    if(!(i > midPoint)){
-      diam += " ".repeat(Math.abs(midPoint - i)) 
-        + '*'.repeat(i+i-1) + '\n';      
-    }else{
-      diam += " ".repeat(Math.abs(midPoint - i)) 
-        + '*'.repeat(Math.abs((i+i-1)- 4 * (count++)))  + '\n';      
-    } 
+    !(i > midPoint) ? diam += " ".repeat(Math.abs(midPoint - i)) + 
+                              '*'.repeat(i+i-1) + '\n'      
+                    : diam += " ".repeat(Math.abs(midPoint - i)) + 
+                              '*'.repeat(Math.abs((i+i-1)- 4 * (count++)))  + '\n'    
   }  
-  }else{
-    return null
-  }
-
   return diam
 }
 diamond(3)
