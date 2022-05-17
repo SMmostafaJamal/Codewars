@@ -14,3 +14,33 @@ The numbers are 2015, 6
 
 Sum is 2021.
 */
+function sumFromString(str){
+  // ...
+  let s = ''
+  let eqn = ''
+  for(let i=0; i < str.length; i++){
+//     console.log(!isNaN(str[i]))
+    if(!isNaN((str[i])) ){
+     if(str[i] === ' '){
+        s += ''
+     }else {
+       s += str[i]
+       
+     }      
+    }else {
+      s += '+'
+    }
+  }
+//   console.log(s)
+
+s.split('+').map(el => el !== '' ? eqn += "+"+ Number(el) : false)
+  if(eval(eqn) !== undefined){
+    return eval(eqn)
+  }else {
+    return 0
+  }
+//   console.log(eval(eqn))
+  }
+// sumFromString("In 2015, I want to know how much does iPhone 6+ cost?")
+sumFromString("Hello World")
+// sumFromString("e=mc^2")
