@@ -10,3 +10,13 @@ with size 12 should return : '101010101010'.
 
 The size will always be positive and will only use whole numbers.
 */
+function stringy(size) {
+  // your code here   
+  let strings = ''
+  for(let num = 1; num <= size; num++){
+    (num % 2 !== 0) ? strings += 1 : strings += 0
+  }
+  return strings
+}
+
+stringy(3)
