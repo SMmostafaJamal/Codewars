@@ -7,26 +7,16 @@ the operators are +, -, *, // */
 //  E:  "..... + ..............." => "...................."
 //      "..... - ..."             => ".."
 
-
 function dotCalculator (equation) {
-//   split by space 
-  equation = equation.split(' ')
-//   create a variable to store the result
-  let result = 0
-// converting the double forward to single forward slash for division
-  if(equation[1] === '//'){
-    equation[1] = '/'
+// spliting into  three variable 
+let [a,op,b] = equation.split(' ')
+// if '//' then replace to divition op
+  if(op === '//'){
+    op = '/'
   }
-  
-// calculation by using the spliting array
-  (equation[1] !== '+' || '*' && 
-   equation[0].length > equation[2].length) ?
-   result = eval(equation[0].length + equation[1] + equation[2].length)    
-  : result = eval(equation[0].length + equation[1] + equation[2].length)    
-  
-// transfer the result into dots and return
-  return ''.padStart(Math.floor(result), '.')
+// return the calculation and convert the result into dots of string
+  return ''.padStart(Math.floor(eval(a.length + op + b.length)), '.')
 
   }
 
-dotCalculator(".. + ..") // return "...."
+dotCalculator(".. + ..") 
