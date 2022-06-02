@@ -7,10 +7,8 @@
 
 // a function which receives string
 function accum(s) {
-//   split each letter 
-  s = s.toLowerCase().split('')
-//   loop through each letter and use uppercase & increase one letter in each loop join by'-'
-  return s.map((el,i)=> el.toUpperCase()+(el.repeat(i))).join('-')
+//   split each letter loop through each letter and use uppercase & increase one letter in each loop join by'-'
+  return s.toLowerCase().split('').map((el,i)=> el.toUpperCase()+(el.repeat(i))).join('-')
 }
 
 accum("RqaEzty") // -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
