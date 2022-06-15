@@ -4,13 +4,9 @@
 // R: last array of numbers
 // E: ([1, 2, 3, 4, 5, 6, 7, 8, 9], 3) => [4, 6, 8]
 // P:
-
 function evenNumbers(array, number) {
-// variable to store even numbers
-  let n = []
-//   loop through the given array and push the even number to the variable
-  array.map(el => el % 2 === 0 ? n.push(el) : false)
-//   return the last given number of the array
-  return n.splice(-number)
-}
+//   filter the even number from the given array and show the last numbers of filtered  array
+  return array.filter(el => el % 2 === 0 ).splice(-number)
+
+  }
 evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3)
