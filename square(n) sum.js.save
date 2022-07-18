@@ -1,0 +1,7 @@
+/*function squareSum(numbers){
+  let total = 0 
+  numbers.forEach(el => total += el**2)
+  return total
+}
+
+squareSum([0, 3, 4, 5])
