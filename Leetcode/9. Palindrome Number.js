@@ -3,22 +3,21 @@
  * @return {boolean}
  */
 var isPalindrome = function(x) {
-//     check the length if its even or then divide in middle point between make two array
-    x = Array.from(String(x));
-     let first
-     let sec 
-    if(x.length % 2 != 0){
-         first = x.filter((el,i) => i <= Math.floor(x.length/2))
-         sec = x.filter((el,i) => i >= Math.floor(x.length/2))
-    }else{
-         first = x.filter((el,i) => i < x.length/2)
-         sec = x.filter((el,i) => i > x.length/2)
+//     if x less than 0 then return false
+    if(x < 0) return false;
+//     at first store the given number to a variable and also create another variable reverseNum = 0
+    let tmp = x
+    let reverseNum = 0
+    while(tmp != 0){
+//      separate the last number by doing modulo by 10 and store in an another variable
+        let lastNum = tmp % 10
+//      multiply with reverseNum with 10 and add the lastNum
+        reverseNum = reverseNum * 10 + lastNum
+//      remove the last number from tmp variable by deviding tmp with 10 and use Math.floor to remove the decimal value
+        tmp = Math.floor(tmp/10)
     }
-        
-//     then check both arrays are equal
-    for(let i = 0; i < first.length; i++){
-        if(first[i] == sec[(sec.length-1)-i]) return true
-    }
+//      campare x with reverseNum
+    return x === reverseNum ? true : false
 };
 
-isPalindrome(121)
+isPalindrome(123)
